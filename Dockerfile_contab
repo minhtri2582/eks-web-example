@@ -1,0 +1,7 @@
+FROM ubuntu:latest
+RUN apt update
+RUN apt install -y curl && apt install cron && apt -y install vim && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt clean
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+
